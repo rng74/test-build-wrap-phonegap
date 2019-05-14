@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>A plus B</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="scripts/bootstrap.min.js"></script>
+        <script>
+            window.onload = function () {
+                document.getElementById('btnCalc').addEventListener('click', calc)
+                document.getElementById('goGit').addEventListener('click', goGit);
+            };
+
+            function goGit() {
+                let ref = window.open('https://github.com', '_blank', 'location=no');
+            }
+
+            function calc() {
+                let aVar = Number(document.getElementById('aVar').value);
+                let bVar = Number(document.getElementById('bVar').value);
+
+                let res = aVar + bVar;
+
+                document.getElementById('result').innerHTML = aVar + " + " + bVar + " iis: " + res;
+            }
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript" src="cordova.js"></script>
+        <h1>Calculator:</h1>
+        <label>A plus B</label>
+        <br>
+        <input type="number" id="aVar"/>
+        <br>
+        <input type="number" id="bVar"/>
+        <button type="button" id="btnCalc" class="btn btn-light">Calculate</button>
+        <div id="result"></div>
+
+        <h1>TEST TEST</h1>
+        <button type="button" class="btn btn-dark" id="goGit">Go github</button>
+    </body>
+</html>
